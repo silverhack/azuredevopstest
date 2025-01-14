@@ -16,6 +16,9 @@ jobs:
       - name: Get current date
         id: date
         run: echo "today=$(date +'%Y-%m-%d_%H%M%S')" >> $GITHUB_OUTPUT
+      - name: Set release
+        run: |
+          echo "Thanks for follow [Monkey365](https://github.com/silverhack/monkey365)! This is a tagged release (${$GITHUB_OUTPUT})." > RELEASE.md
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Create Release
@@ -26,6 +29,7 @@ jobs:
         with:
           tag_name: ${{ steps.date.outputs.today }}
           release_name: Release ${{ steps.date.outputs.today }}
+          body_path: RELEASE.md
           draft: false
           prerelease: false
       # Create a zip of the folder
@@ -39,7 +43,5 @@ jobs:
           gh release upload ${{ steps.date.outputs.today }} ./build/assets.sha256
           sha512sum ./build/assets.zip | awk '{print $1}' > ./build/assets.sha512
           gh release upload ${{ steps.date.outputs.today }} ./build/assets.sha512
-          echo "Thanks for follow [Monkey365](https://github.com/silverhack/monkey365)! This is a tagged release (${$GITHUB_OUTPUT})." > ./build/RELEASE.md
-          gh release upload ${{ steps.date.outputs.today }} ./build/RELEASE.md
         env:
           GITHUB_TOKEN: ${{ github.TOKEN }}
