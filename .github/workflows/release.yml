@@ -17,8 +17,9 @@ jobs:
         id: date
         run: echo "today=$(date +'%Y-%m-%d_%H%M%S')" >> $GITHUB_OUTPUT
       - name: Set release
+        id: release_message
         run: |
-          echo "Thanks for follow [Monkey365](https://github.com/silverhack/monkey365)!" > RELEASE.md
+          echo "message=$(Thanks for follow [Monkey365](https://github.com/silverhack/monkey365)! This is a tagged release (${{ steps.date.outputs.today }})." >> $GITHUB_MESSAGE_OUTPUT
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Create Release
@@ -29,7 +30,7 @@ jobs:
         with:
           tag_name: ${{ steps.date.outputs.today }}
           release_name: Release ${{ steps.date.outputs.today }}
-          body_path: RELEASE.md
+          body: ${{join(steps.release_message.outputs.*, '\n')}}
           draft: false
           prerelease: false
       # Create a zip of the folder
