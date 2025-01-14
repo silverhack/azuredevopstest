@@ -34,9 +34,9 @@ jobs:
           mkdir -p build
           git archive --format zip --output ./build/assets.zip main
           gh release upload ${{ steps.date.outputs.today }} ./build/assets.zip
-          sha256sum assets.zip | awk '{print $1}' > ./build/assets.256
+          sha256sum ./build/assets.zip | awk '{print $1}' > ./build/assets.sha256
           gh release upload ${{ steps.date.outputs.today }} ./build/assets.sha256
-          sha512sum assets.zip | awk '{print $1}' > ./build/assets.512
+          sha512sum ./build/assets.zip | awk '{print $1}' > ./build/assets.sha512
           gh release upload ${{ steps.date.outputs.today }} ./build/assets.sha512
         env:
           GITHUB_TOKEN: ${{ github.TOKEN }}
