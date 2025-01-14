@@ -33,9 +33,6 @@ jobs:
         run: |
           mkdir -p build
           git archive --format zip --output ./build/assets.zip main
-      - name: Upload release binaries
-        uses: alexellis/upload-assets@0.4.1
+          gh release upload ${{github.event.release.tag_name}} ./build/assets.zip
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          asset_paths: '["./build/*"]'
+          GITHUB_TOKEN: ${{ github.TOKEN }}
