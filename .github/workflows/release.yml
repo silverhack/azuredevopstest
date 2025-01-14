@@ -29,6 +29,7 @@ jobs:
           draft: false
           prerelease: false
       # Create a zip of the folder
+        if: steps.create_release.outcome  == 'success'
       - name: Create ZIP file of the folder
         run: |
           mkdir -p build
