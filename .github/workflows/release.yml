@@ -33,6 +33,6 @@ jobs:
         run: |
           mkdir -p build
           git archive --format zip --output ./build/assets.zip main
-          gh release upload ${{github.event.release.tag_name}} ./build/assets.zip
+          gh release upload ${{ steps.date.outputs.today }} ./build/assets.zip
         env:
           GITHUB_TOKEN: ${{ github.TOKEN }}
