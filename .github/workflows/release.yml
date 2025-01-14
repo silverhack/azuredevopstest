@@ -20,7 +20,6 @@ jobs:
         id: release_message
         run: |
           echo "message=$(Thanks for follow https://github.com/silverhack/monkey365! This is a tagged release ${{ steps.date.outputs.today }}.)" >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Create Release
