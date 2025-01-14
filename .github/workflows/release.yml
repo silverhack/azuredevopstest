@@ -30,7 +30,7 @@ jobs:
         with:
           tag_name: ${{ steps.date.outputs.today }}
           release_name: Release ${{ steps.date.outputs.today }}
-          body: Body ${{ steps.release_message.outputs.message }}
+          body: Body ${{ env.message }}
           draft: false
           prerelease: false
       # Create a zip of the folder
