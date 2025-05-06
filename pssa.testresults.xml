@@ -1,14 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2025-05-06" time="11:36:00">
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="2" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2025-05-06" time="12:17:20">
   <environment clr-version="4.0.30319.42000" user-domain="DESKTOP-FB19O1D" cwd="C:\azuredevops\dev\monkey365" platform="Microsoft Windows 11 Pro|C:\WINDOWS|\Device\Harddisk0\Partition3" machine-name="DESKTOP-FB19O1D" nunit-version="2.5.8.0" os-version="10.0.26100" user="silverhack" />
   <culture-info current-culture="en-GB" current-uiculture="en-US" />
-  <test-suite type="TestFixture" name="Pester" executed="True" result="Success" success="True" time="3.8962" asserts="0" description="Pester">
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Failure" success="False" time="7.837" asserts="0" description="Pester">
     <results>
-      <test-suite type="TestFixture" name="C:\azuredevops\dev\monkey365\pipelines\scriptanalyzer\container\PSSA.tests.ps1" executed="True" result="Success" success="True" time="3.8962" asserts="0" description="C:\azuredevops\dev\monkey365\pipelines\scriptanalyzer\container\PSSA.tests.ps1">
+      <test-suite type="TestFixture" name="C:\azuredevops\dev\monkey365\pipelines\scriptanalyzer\container\PSSA.tests.ps1" executed="True" result="Failure" success="False" time="7.837" asserts="0" description="C:\azuredevops\dev\monkey365\pipelines\scriptanalyzer\container\PSSA.tests.ps1">
         <results>
-          <test-suite type="TestFixture" name="PSScriptAnalyzer" executed="True" result="Success" success="True" time="3.7376" asserts="0" description="PSScriptAnalyzer">
+          <test-suite type="TestFixture" name="PSScriptAnalyzer" executed="True" result="Failure" success="False" time="7.723" asserts="0" description="PSScriptAnalyzer">
             <results>
-              <test-case description="Does not throw while running Script Analyzer" name="PSScriptAnalyzer.Does not throw while running Script Analyzer" time="3.6865" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Does not throw while running Script Analyzer" name="PSScriptAnalyzer.Does not throw while running Script Analyzer" time="7.1813" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Pass tests" name="PSScriptAnalyzer.Pass tests" time="0.0571" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>Expected $null or empty, but got @('Problem in Invoke-Monkey365.ps1 at line 423 with message: Line has trailing whitespace', 'Problem in New-HorizontalNavBar.ps1 at line 91 with message: The Variable 'input' is an automatic variable that is built into PowerShell, assigning to it might have undesired side effects. If assignment is not by design, please use a different name.', 'Problem in New-HorizontalNavBar.ps1 at line 91 with message: The Variable 'input' is an automatic variable that is built into PowerShell, assigning to it might have undesired side effects. If assignment is not by design, please use a different name.').</message>
+                  <stack-trace>at $Script:ScriptAnalyzer.Results | Foreach-Object {"Problem in $($_.ScriptName) at line $($_.Line) with message: $($_.Message)" } |Should -BeNullOrEmpty, C:\azuredevops\dev\monkey365\pipelines\scriptanalyzer\container\PSSA.tests.ps1:29
+at &lt;ScriptBlock&gt;, C:\azuredevops\dev\monkey365\pipelines\scriptanalyzer\container\PSSA.tests.ps1:29</stack-trace>
+                </failure>
+              </test-case>
             </results>
           </test-suite>
         </results>
