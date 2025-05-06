@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="71" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2025-05-06" time="11:28:38">
+  <environment clr-version="4.0.30319.42000" user-domain="DESKTOP-FB19O1D" cwd="C:\azuredevops\dev\monkey365" platform="Microsoft Windows 11 Pro|C:\WINDOWS|\Device\Harddisk0\Partition3" machine-name="DESKTOP-FB19O1D" nunit-version="2.5.8.0" os-version="10.0.26100" user="silverhack" />
+  <culture-info current-culture="en-GB" current-uiculture="en-US" />
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Failure" success="False" time="0.3862" asserts="0" description="Pester">
+    <results>
+      <test-suite type="TestFixture" name="C:\azuredevops\dev\monkey365\pipelines\scriptanalyzer\container\PSSA.tests.ps1" executed="True" result="Failure" success="False" time="0.3862" asserts="0" description="C:\azuredevops\dev\monkey365\pipelines\scriptanalyzer\container\PSSA.tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="PSScriptAnalyzer" executed="True" result="Failure" success="False" time="0.2091" asserts="0" description="PSScriptAnalyzer">
+            <results>
+              <test-case description="Does not throw while running Script Analyzer" name="PSScriptAnalyzer.Does not throw while running Script Analyzer" time="0.0326" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>ValidationMetadataException: The argument is null. Provide a valid value for the argument, and then try running the command again.
+ParameterBindingValidationException: Cannot validate argument on parameter 'Path'. The argument is null. Provide a valid value for the argument, and then try running the command again.</message>
+                  <stack-trace>at &lt;ScriptBlock&gt;, C:\azuredevops\dev\monkey365\pipelines\scriptanalyzer\container\PSSA.tests.ps1:24</stack-trace>
+                </failure>
+              </test-case>
+              <test-case description="Passes PSAlignAssignmentStatement" name="PSScriptAnalyzer.Passes PSAlignAssignmentStatement" time="0.0029" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingCmdletAliases" name="PSScriptAnalyzer.Passes PSAvoidUsingCmdletAliases" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidAssignmentToAutomaticVariable" name="PSScriptAnalyzer.Passes PSAvoidAssignmentToAutomaticVariable" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidDefaultValueSwitchParameter" name="PSScriptAnalyzer.Passes PSAvoidDefaultValueSwitchParameter" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidDefaultValueForMandatoryParameter" name="PSScriptAnalyzer.Passes PSAvoidDefaultValueForMandatoryParameter" time="0.0051" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingEmptyCatchBlock" name="PSScriptAnalyzer.Passes PSAvoidUsingEmptyCatchBlock" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidExclaimOperator" name="PSScriptAnalyzer.Passes PSAvoidExclaimOperator" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidGlobalAliases" name="PSScriptAnalyzer.Passes PSAvoidGlobalAliases" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidGlobalFunctions" name="PSScriptAnalyzer.Passes PSAvoidGlobalFunctions" time="0.0026" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidGlobalVars" name="PSScriptAnalyzer.Passes PSAvoidGlobalVars" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidInvokingEmptyMembers" name="PSScriptAnalyzer.Passes PSAvoidInvokingEmptyMembers" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidLongLines" name="PSScriptAnalyzer.Passes PSAvoidLongLines" time="0.0024" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidMultipleTypeAttributes" name="PSScriptAnalyzer.Passes PSAvoidMultipleTypeAttributes" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidNullOrEmptyHelpMessageAttribute" name="PSScriptAnalyzer.Passes PSAvoidNullOrEmptyHelpMessageAttribute" time="0.0025" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidOverwritingBuiltInCmdlets" name="PSScriptAnalyzer.Passes PSAvoidOverwritingBuiltInCmdlets" time="0.0061" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingPositionalParameters" name="PSScriptAnalyzer.Passes PSAvoidUsingPositionalParameters" time="0.0021" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSReservedCmdletChar" name="PSScriptAnalyzer.Passes PSReservedCmdletChar" time="0.0033" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSReservedParams" name="PSScriptAnalyzer.Passes PSReservedParams" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidSemicolonsAsLineTerminators" name="PSScriptAnalyzer.Passes PSAvoidSemicolonsAsLineTerminators" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidShouldContinueWithoutForce" name="PSScriptAnalyzer.Passes PSAvoidShouldContinueWithoutForce" time="0.0021" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidTrailingWhitespace" name="PSScriptAnalyzer.Passes PSAvoidTrailingWhitespace" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingUsernameAndPasswordParams" name="PSScriptAnalyzer.Passes PSAvoidUsingUsernameAndPasswordParams" time="0.0021" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingAllowUnencryptedAuthentication" name="PSScriptAnalyzer.Passes PSAvoidUsingAllowUnencryptedAuthentication" time="0.0022" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingBrokenHashAlgorithms" name="PSScriptAnalyzer.Passes PSAvoidUsingBrokenHashAlgorithms" time="0.0021" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingComputerNameHardcoded" name="PSScriptAnalyzer.Passes PSAvoidUsingComputerNameHardcoded" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingConvertToSecureStringWithPlainText" name="PSScriptAnalyzer.Passes PSAvoidUsingConvertToSecureStringWithPlainText" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingDeprecatedManifestFields" name="PSScriptAnalyzer.Passes PSAvoidUsingDeprecatedManifestFields" time="0.0042" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingDoubleQuotesForConstantString" name="PSScriptAnalyzer.Passes PSAvoidUsingDoubleQuotesForConstantString" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingInvokeExpression" name="PSScriptAnalyzer.Passes PSAvoidUsingInvokeExpression" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingPlainTextForPassword" name="PSScriptAnalyzer.Passes PSAvoidUsingPlainTextForPassword" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingWMICmdlet" name="PSScriptAnalyzer.Passes PSAvoidUsingWMICmdlet" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSAvoidUsingWriteHost" name="PSScriptAnalyzer.Passes PSAvoidUsingWriteHost" time="0.0032" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseCompatibleCommands" name="PSScriptAnalyzer.Passes PSUseCompatibleCommands" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseCompatibleSyntax" name="PSScriptAnalyzer.Passes PSUseCompatibleSyntax" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseCompatibleTypes" name="PSScriptAnalyzer.Passes PSUseCompatibleTypes" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSMisleadingBacktick" name="PSScriptAnalyzer.Passes PSMisleadingBacktick" time="0.0024" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSMissingModuleManifestField" name="PSScriptAnalyzer.Passes PSMissingModuleManifestField" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSPlaceCloseBrace" name="PSScriptAnalyzer.Passes PSPlaceCloseBrace" time="0.0045" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSPlaceOpenBrace" name="PSScriptAnalyzer.Passes PSPlaceOpenBrace" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSPossibleIncorrectComparisonWithNull" name="PSScriptAnalyzer.Passes PSPossibleIncorrectComparisonWithNull" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSPossibleIncorrectUsageOfAssignmentOperator" name="PSScriptAnalyzer.Passes PSPossibleIncorrectUsageOfAssignmentOperator" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSPossibleIncorrectUsageOfRedirectionOperator" name="PSScriptAnalyzer.Passes PSPossibleIncorrectUsageOfRedirectionOperator" time="0.0021" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSProvideCommentHelp" name="PSScriptAnalyzer.Passes PSProvideCommentHelp" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSReviewUnusedParameter" name="PSScriptAnalyzer.Passes PSReviewUnusedParameter" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseApprovedVerbs" name="PSScriptAnalyzer.Passes PSUseApprovedVerbs" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseBOMForUnicodeEncodedFile" name="PSScriptAnalyzer.Passes PSUseBOMForUnicodeEncodedFile" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseCmdletCorrectly" name="PSScriptAnalyzer.Passes PSUseCmdletCorrectly" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseCompatibleCmdlets" name="PSScriptAnalyzer.Passes PSUseCompatibleCmdlets" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseConsistentIndentation" name="PSScriptAnalyzer.Passes PSUseConsistentIndentation" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseConsistentWhitespace" name="PSScriptAnalyzer.Passes PSUseConsistentWhitespace" time="0.0042" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseCorrectCasing" name="PSScriptAnalyzer.Passes PSUseCorrectCasing" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseDeclaredVarsMoreThanAssignments" name="PSScriptAnalyzer.Passes PSUseDeclaredVarsMoreThanAssignments" time="0.0031" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseLiteralInitializerForHashtable" name="PSScriptAnalyzer.Passes PSUseLiteralInitializerForHashtable" time="0.0032" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseOutputTypeCorrectly" name="PSScriptAnalyzer.Passes PSUseOutputTypeCorrectly" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseProcessBlockForPipelineCommand" name="PSScriptAnalyzer.Passes PSUseProcessBlockForPipelineCommand" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUsePSCredentialType" name="PSScriptAnalyzer.Passes PSUsePSCredentialType" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSShouldProcess" name="PSScriptAnalyzer.Passes PSShouldProcess" time="0.0021" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseShouldProcessForStateChangingFunctions" name="PSScriptAnalyzer.Passes PSUseShouldProcessForStateChangingFunctions" time="0.003" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseSingularNouns" name="PSScriptAnalyzer.Passes PSUseSingularNouns" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseSupportsShouldProcess" name="PSScriptAnalyzer.Passes PSUseSupportsShouldProcess" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseToExportFieldsInManifest" name="PSScriptAnalyzer.Passes PSUseToExportFieldsInManifest" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseUsingScopeModifierInNewRunspaces" name="PSScriptAnalyzer.Passes PSUseUsingScopeModifierInNewRunspaces" time="0.0041" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSUseUTF8EncodingForHelpFile" name="PSScriptAnalyzer.Passes PSUseUTF8EncodingForHelpFile" time="0.0024" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSDSCDscExamplesPresent" name="PSScriptAnalyzer.Passes PSDSCDscExamplesPresent" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSDSCDscTestsPresent" name="PSScriptAnalyzer.Passes PSDSCDscTestsPresent" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSDSCReturnCorrectTypesForDSCFunctions" name="PSScriptAnalyzer.Passes PSDSCReturnCorrectTypesForDSCFunctions" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSDSCUseIdenticalMandatoryParametersForDSC" name="PSScriptAnalyzer.Passes PSDSCUseIdenticalMandatoryParametersForDSC" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSDSCUseIdenticalParametersForDSC" name="PSScriptAnalyzer.Passes PSDSCUseIdenticalParametersForDSC" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSDSCStandardDSCFunctionsInResource" name="PSScriptAnalyzer.Passes PSDSCStandardDSCFunctionsInResource" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Passes PSDSCUseVerboseMessageInDSCResource" name="PSScriptAnalyzer.Passes PSDSCUseVerboseMessageInDSCResource" time="0.0019" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
