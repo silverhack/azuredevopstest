@@ -420,7 +420,7 @@ Function Invoke-Monkey365{
         Initialize-MonkeyLogger
         #Check if import job
         If($PSBoundParameters.ContainsKey('ImportJob') -and $PSBoundParameters.ImportJob){
-            Import-MonkeyJob                       
+            Import-MonkeyJob
             return
         }
         #Check if list collectors
