@@ -88,8 +88,8 @@ function New-HorizontalNavBar{
         }
         #Close input tags
         $all_inputs = $navbar.SelectNodes("//input")
-        foreach($input in $all_inputs){
-            [void]$input.AppendChild($navbar.CreateWhitespace(""))
+        foreach($_input in $all_inputs){
+            [void]$_input.AppendChild($navbar.CreateWhitespace(""))
         }
     }
     End{
