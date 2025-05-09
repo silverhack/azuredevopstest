@@ -8,12 +8,16 @@ jobs:
   monkeyversion:
     name: Get Monkey365 version
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Get current version
         id: monkey365version
         shell: pwsh
         run: |
-          $manifest = Test-ModuleManifest -Path "$PSScriptRoot\monkey365.psd1"
+          $manifest = Test-ModuleManifest -Path "./monkey365.psd1"
           $prerelease = $manifest.PrivateData.PSData['Prerelease']
           If ($prerelease -and $prerelease.StartsWith('-')){
               $version = ("{0}{1}" -f $manifest.version,$prerelease)
@@ -22,8 +26,8 @@ jobs:
               $version = ("{0}-{1}" -f $manifest.version,$prerelease)
           }
           $releaseName = ("Monkey365 v{0}" -f $version)
-          Write-Host "monkey365version=$version" >> $GITHUB_OUTPUT
-          Write-Host "releasename=$releaseName" >> $GITHUB_OUTPUT
+          "monkey365version=$version" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          "releasename=$releaseName" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
       - name: Get current date
         id: date
         run: echo "today=$(date +'%Y-%m-%d_%H%M%S')" >> $GITHUB_OUTPUT
@@ -31,8 +35,6 @@ jobs:
         id: release_message
         run: |
           echo "message=Thanks for follow [Monkey365](https://github.com/silverhack/monkey365)! This is a tagged release (${{ steps.monkey365version.outputs.monkey365version }})." >> $GITHUB_ENV
-      - name: Checkout code
-        uses: actions/checkout@v4
       - name: Create Release
         id: create_release
         uses: comnoco/create-release-action@v2.0.5
@@ -49,11 +51,11 @@ jobs:
         if: steps.create_release.outcome  == 'success'
         run: |
           mkdir -p build
-          git archive --format zip --output ./build/assets.zip main
-          gh release upload ${{ steps.date.outputs.today }} ./build/assets.zip
-          sha256sum ./build/assets.zip | awk '{print $1}' > ./build/assets.sha256
-          gh release upload ${{ steps.date.outputs.today }} ./build/assets.sha256
-          sha512sum ./build/assets.zip | awk '{print $1}' > ./build/assets.sha512
-          gh release upload ${{ steps.date.outputs.today }} ./build/assets.sha512
+          git archive --format zip --output ./build/monkey365.zip main
+          gh release upload ${{ steps.monkey365version.outputs.monkey365version }} ./build/monkey365.zip
+          sha256sum ./build/assets.zip | awk '{print $1}' > ./build/monkey365.sha256
+          gh release upload ${{ steps.monkey365version.outputs.monkey365version }} ./build/monkey365.sha256
+          sha512sum ./build/assets.zip | awk '{print $1}' > ./build/monkey365.sha512
+          gh release upload ${{ steps.monkey365version.outputs.monkey365version }} ./build/monkey365.sha512
         env:
           GITHUB_TOKEN: ${{ github.TOKEN }}
