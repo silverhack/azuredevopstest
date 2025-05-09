@@ -13,7 +13,7 @@ jobs:
         id: monkey365version
         shell: pwsh
         run: |
-          $manifest = Test-ModuleManifest -Path .\monkey365.psd1
+          $manifest = Test-ModuleManifest -Path "$PSScriptRoot\monkey365.psd1"
           $prerelease = $manifest.PrivateData.PSData['Prerelease']
           If ($prerelease -and $prerelease.StartsWith('-')){
               $version = ("{0}{1}" -f $manifest.version,$prerelease)
