@@ -34,7 +34,7 @@ jobs:
       - name: Set release
         id: release_message
         run: |
-          echo "message=Thanks for follow [Monkey365](https://github.com/silverhack/monkey365)! This is a tagged release (${{ steps.monkey365version.outputs.monkey365version }})." >> $GITHUB_ENV
+          echo "message=Thanks for follow [Monkey365](https://github.com/silverhack/monkey365)!." >> $GITHUB_ENV
       - name: Create Release
         id: create_release
         uses: comnoco/create-release-action@v2.0.5
@@ -43,7 +43,7 @@ jobs:
         with:
           tag_name: ${{ steps.monkey365version.outputs.monkey365version }}
           release_name: ${{ steps.monkey365version.outputs.releasename }}
-          body: ${{ env.message }}
+          body: ${{ steps.release_message.outputs.message }}
           draft: true
           prerelease: false
       # Create a zip of the folder
@@ -53,9 +53,9 @@ jobs:
           mkdir -p build
           git archive --format zip --output ./build/monkey365.zip main
           gh release upload ${{ steps.monkey365version.outputs.monkey365version }} ./build/monkey365.zip
-          sha256sum ./build/assets.zip | awk '{print $1}' > ./build/monkey365.sha256
+          sha256sum ./build/monkey365.zip | awk '{print $1}' > ./build/monkey365.sha256
           gh release upload ${{ steps.monkey365version.outputs.monkey365version }} ./build/monkey365.sha256
-          sha512sum ./build/assets.zip | awk '{print $1}' > ./build/monkey365.sha512
+          sha512sum ./build/monkey365.zip | awk '{print $1}' > ./build/monkey365.sha512
           gh release upload ${{ steps.monkey365version.outputs.monkey365version }} ./build/monkey365.sha512
         env:
           GITHUB_TOKEN: ${{ github.TOKEN }}
