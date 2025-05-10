@@ -1,0 +1,17 @@
+name: Publish to PowerShell Gallery
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  PublishMonkeyToGallery:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish
+        shell: powershell
+        env:
+          NUGET_KEY: ${{ secrets.PSGALLERY }}
+        run: |
+          Publish-Module -Path "./" -NugetAPIKey $env:NUGET_KEY -Verbose
