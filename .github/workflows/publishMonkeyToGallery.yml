@@ -14,4 +14,4 @@ jobs:
         env:
           NUGET_KEY: ${{ secrets.PSGALLERY }}
         run: |
-          Publish-Module -Path "./" -NugetAPIKey $env:NUGET_KEY -Verbose
+          Publish-Module -Path $env:GITHUB_WORKSPACE -NugetAPIKey $env:NUGET_KEY -Verbose
